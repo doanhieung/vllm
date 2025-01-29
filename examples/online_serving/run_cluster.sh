@@ -43,7 +43,7 @@ docker run \
     --entrypoint /bin/bash \
     --network host \
     --name node \
-    --shm-size 16G \
+    --shm-size 10.24g \
     -v "${PATH_TO_HF_HOME}:/root/.cache/huggingface" \
     "${ADDITIONAL_ARGS[@]}" \
     "${DOCKER_IMAGE}" -c "${RAY_START_CMD}"
