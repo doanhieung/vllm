@@ -39,11 +39,11 @@ fi
 
 # Run the docker command with the user specified parameters and additional arguments
 docker run \
+    --privileged \
     --entrypoint /bin/bash \
     --network host \
     --name node \
-    --shm-size 10.24g \
-    --gpus all \
+    --shm-size 16G \
     -v "${PATH_TO_HF_HOME}:/root/.cache/huggingface" \
     "${ADDITIONAL_ARGS[@]}" \
     "${DOCKER_IMAGE}" -c "${RAY_START_CMD}"
